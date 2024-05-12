@@ -1,11 +1,2 @@
-function reverseList(head) {
-  let prev = null;
-  let curr = head;
-  while (curr) {
-    const next = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = next;
-  }
-  return prev;
-}
+const deepFlatten = (arr) =>
+  [].concat(...arr.map((v) => (Array.isArray(v) ? deepFlatten(v) : v)));
